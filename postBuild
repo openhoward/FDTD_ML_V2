@@ -1,0 +1,11 @@
+#!/bin/bash
+# 安裝 Miniconda
+wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+
+# 建立 Conda 環境並安裝套件
+conda create -n myenv -c conda-forge python=3.10 numpy matplotlib ipykernel -y
+
+# 註冊 Jupyter Kernel
+$HOME/miniconda/envs/myenv/bin/python -m ipykernel install --user --name=myenv --display-name "Python (myenv)"
