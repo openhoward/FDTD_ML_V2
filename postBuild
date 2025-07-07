@@ -1,0 +1,14 @@
+#!/bin/bash
+# 安裝 Miniconda
+wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+
+# 複製 Meep 原始碼
+git clone https://github.com/NanoComp/meep.git
+
+# 建立 Conda 環境並安裝 pymeep
+conda create -n mp -c conda-forge pymeep -y
+
+# 註冊 Jupyter kernel
+$HOME/miniconda/envs/mp/bin/python -m ipykernel install --user --name=mp --display-name "Python (mp)"
