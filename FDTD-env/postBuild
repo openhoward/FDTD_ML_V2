@@ -18,3 +18,4 @@ conda create -n mp -c conda-forge python=3.10 pymeep ipykernel -y
 # ✅ 註冊 mp kernel 到 jupyter
 source activate mp
 python -m ipykernel install --user --name=mp --display-name "Python (mp)"
+
