@@ -6,8 +6,8 @@ bash miniconda.sh -b -p $HOME/miniconda
 export PATH="$HOME/miniconda/bin:$PATH"
 
 # 初始化 Conda 環境
-source $HOME/miniconda/etc/profile.d/conda.sh
-conda activate base
+#source $HOME/miniconda/etc/profile.d/conda.sh
+#conda activate base
 
 # 複製 Meep 原始碼
 git clone https://github.com/NanoComp/meep.git
